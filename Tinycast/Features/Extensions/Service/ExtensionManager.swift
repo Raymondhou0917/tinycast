@@ -886,6 +886,10 @@ final class ExtensionManager: ExtensionRuntimeDelegate, ExtensionHostContext {
     var pasteTarget: NSRunningApplication? { coordinator?.pasteTarget }
     var applicationURLs: [URL] { coordinator?.applicationURLs ?? [] }
 
+    func copySelection() async -> String? {
+        await coordinator?.copySelection()
+    }
+
     func closeMainWindow(clearRootSearch: Bool) {
         coordinator?.closeMainWindow()
     }

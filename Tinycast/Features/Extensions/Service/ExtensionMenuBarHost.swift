@@ -27,6 +27,8 @@ final class ExtensionMenuBarHost: ExtensionHostContext {
     var pasteTarget: NSRunningApplication? { NSWorkspace.shared.frontmostApplication }
     var applicationURLs: [URL] { coordinator?.applicationURLs ?? [] }
 
+    func copySelection() async -> String? { await coordinator?.copySelection() }
+
     func enableInteraction() { isInteractive = true }
     func closeMainWindow(clearRootSearch: Bool) {}
     func reopenPalette() { coordinator?.reopenPalette(hasRunningCommand: false) }

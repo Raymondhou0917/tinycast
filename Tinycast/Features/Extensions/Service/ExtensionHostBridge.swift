@@ -33,6 +33,7 @@ protocol ExtensionHostContext: AnyObject {
         fallbackText: String?, launchType: ExtensionLaunchType, launchContext: [String: RenderValue]
     ) throws
     func launch(_ link: ExtensionDeepLink) throws
+    func copySelection() async -> String?
 }
 
 struct ExtensionToast: Sendable, Equatable, Identifiable {
@@ -482,7 +483,7 @@ final class ExtensionHostBridge: ExtensionHostAPI {
             return describe(application: url)
 
         case "selectedText":
-            return try selectedText()
+            return try await selectedText()
 
         case "selectedFinderItems":
             return try finderSelection()
@@ -575,7 +576,7 @@ final class ExtensionHostBridge: ExtensionHostAPI {
     }
 
     /// Reads the app the palette displaced, never the system-wide focus.
-    private func selectedText() throws -> String {
+    private func selectedText() async throws -> String {
         guard Permissions.ensureAccessibility() else {
             throw ExtensionHostError.unsupported("getSelectedText without the Accessibility permission")
         }
@@ -583,10 +584,13 @@ final class ExtensionHostBridge: ExtensionHostAPI {
             target.processIdentifier != NSRunningApplication.current.processIdentifier
         else { throw ExtensionHostError.unsupported("getSelectedText (no target application)") }
 
-        guard let text = AccessibilityText.selection(in: target), !text.isEmpty else {
-            throw ExtensionHostError.unsupported("getSelectedText (no selection)")
+        if let text = AccessibilityText.selection(in: target), !text.isEmpty {
+            return text
         }
-        return text
+        if let copied = await context?.copySelection(), !copied.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return copied
+        }
+        throw ExtensionHostError.unsupported("getSelectedText (no selection)")
     }
 
     /// Joined on a linefeed, which Finder forbids in a name; a comma would split paths.

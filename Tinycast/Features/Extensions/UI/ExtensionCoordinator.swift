@@ -260,6 +260,11 @@ final class ExtensionCoordinator {
     /// The same recorded target the clipboard and emoji paste paths use.
     var pasteTarget: NSRunningApplication? { paletteCoordinator.targetApp }
 
+    func copySelection() async -> String? {
+        guard let target = pasteTarget else { return nil }
+        return await core.textInjector.copySelection(from: target, pasteboard: NSPasteboard.general)
+    }
+
     /// `getApplications()` reports what the launcher itself indexes, so the two never disagree.
     var applicationURLs: [URL] { SearchScopes.appBundles(in: settings.searchScopes) }
 
