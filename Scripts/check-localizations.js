@@ -24,6 +24,7 @@ const LANGUAGES = {
   pt: ["one", "many", "other"],
   ru: ["one", "few", "many", "other"],
   "zh-Hans": ["other"],
+  "zh-Hant": ["other"],
 };
 
 const SPECIFIER = /%(?:(\d+)\$)?[-+ 0#]*\d*(?:\.\d+)?(hh|h|ll|l|q|L|z|t|j)?([@dDiuUxXoOfFeEgGcCsSpaA])/g;
