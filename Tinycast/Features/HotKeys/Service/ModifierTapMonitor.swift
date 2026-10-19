@@ -285,6 +285,10 @@ final class ModifierTapMonitor: HealthCheckable {
         CFRunLoopAddSource(CFRunLoopGetMain(), source, .commonModes)
         CGEvent.tapEnable(tap: port, enable: true)
         needsAccessibility = false
+        // A stale Input Monitoring grant (re-signed build) still creates the tap but starves it.
+        if !CGPreflightListenEventAccess() {
+            NSLog("Tinycast: modifier tap installed without Input Monitoring; events may be withheld")
+        }
     }
 
     private func tearDownTap() {
