@@ -238,8 +238,8 @@ need saying explicitly. Adding it as the view is written costs a line; retrofitt
 
 ## Localization
 
-Tinycast ships English plus German, Spanish, French, Japanese, Korean, Portuguese, Russian and
-Simplified Chinese. Every string lives in `Tinycast/Resources/Localizable.xcstrings`, keyed by its
+Tinycast ships English plus German, Spanish, French, Japanese, Korean, Portuguese, Russian,
+Simplified Chinese and Traditional Chinese. Every string lives in `Tinycast/Resources/Localizable.xcstrings`, keyed by its
 English source text; the compiler extracts the keys, and `./Scripts/sync-strings.sh` writes them into
 the catalog (Xcode's own build does the same in the IDE). The six privacy prompts live in
 `InfoPlist.xcstrings`, keyed by their `Info.plist` key.

@@ -3900,6 +3900,7 @@
 				pt,
 				ru,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = FB9897CCA50570B3E7630145;
 			minimizedProjectReferenceProxies = 1;

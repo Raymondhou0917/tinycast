@@ -113,7 +113,7 @@ Where a number has a special case, the case is a word:
 
 | Key | Values |
 | --- | --- |
-| `general.language` | `"en"` (default), `"de"`, `"es"`, `"fr"`, `"ja"`, `"ko"`, `"pt"`, `"ru"`, `"zh-Hans"` |
+| `general.language` | `"en"` (default), `"de"`, `"es"`, `"fr"`, `"ja"`, `"ko"`, `"pt"`, `"ru"`, `"zh-Hans"`, `"zh-Hant"` |
 | `clipboard.retentionDays` | 1, 7, 30, 90, 180, 365, `"forever"` |
 | `ai.retentionDays` | 7, 30, 90, `"forever"` |
 | `ai.newChatAfterMinutes` | 2, 5, 10, 30, `"never"` |

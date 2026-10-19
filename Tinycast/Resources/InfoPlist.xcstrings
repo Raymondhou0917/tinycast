@@ -57,6 +57,12 @@
             "state" : "translated",
             "value" : "Tinycast 使用自动化来执行你主动运行的系统操作。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 使用自動化來執行你主動執行的系統操作。"
+          }
         }
       }
     },
@@ -115,6 +121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tinycast 仅在你运行切换蓝牙操作时访问蓝牙。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 僅在你執行「切換藍牙」動作時取用藍牙。"
           }
         }
       }
@@ -175,6 +187,12 @@
             "state" : "translated",
             "value" : "Tinycast 访问你的日程，以显示安排并让你加入会议。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 會取用你的行程，以顯示你的行程表並讓你加入會議。"
+          }
         }
       }
     },
@@ -233,6 +251,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tinycast 显示相机预览，方便你查看自己的形象，并将拍摄的照片拷贝到剪贴板。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 顯示相機預覽，方便你檢視自己的形象，並將拍攝的照片複製到剪貼簿。"
           }
         }
       }
@@ -293,6 +317,12 @@
             "state" : "translated",
             "value" : "Tinycast 仅在你使用听写时录制音频，并在你的 Mac 上将其转为文字。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 僅在你使用聽寫時錄製音訊，並在你的 Mac 上將其轉為文字。"
+          }
         }
       }
     },
@@ -352,6 +382,12 @@
             "state" : "translated",
             "value" : "Tinycast 允许你运行的扩展读取和编辑你的提醒事项。"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 允許你執行的擴充功能讀取和編輯你的提醒事項。"
+          }
         }
       }
     },
@@ -409,6 +445,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tinycast 备份"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinycast 備份"
           }
         }
       }

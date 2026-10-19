@@ -33,10 +33,13 @@ struct LanguageTests {
         check(
             "zh-Hans-CN is Simplified Chinese",
             AppLanguage(storedPreferences: ["zh-Hans-CN"]) == .chineseSimplified)
+        check(
+            "zh-Hant-TW is Traditional Chinese",
+            AppLanguage(storedPreferences: ["zh-Hant-TW"]) == .chineseTraditional)
         check("an unshipped language reads as English", AppLanguage(storedPreferences: ["it"]) == .english)
 
         print("# each choice launches into its own localization")
-        let shipped = ["en", "de", "es", "fr", "ja", "ko", "pt", "ru", "zh-Hans"]
+        let shipped = ["en", "de", "es", "fr", "ja", "ko", "pt", "ru", "zh-Hans", "zh-Hant"]
         for language in AppLanguage.allCases {
             check(
                 "\(language.rawValue) resolves to its bundled localization",
@@ -85,7 +88,7 @@ struct LanguageTests {
             "es": ("1 ventana", "2 ventanas"), "fr": ("1 fenêtre", "2 fenêtres"),
             "ja": ("1個のウインドウ", "2個のウインドウ"), "ko": ("윈도우 1개", "윈도우 2개"),
             "pt": ("1 janela", "2 janelas"), "ru": ("1 окно", "2 окна"),
-            "zh-Hans": ("1 个窗口", "2 个窗口")
+            "zh-Hans": ("1 个窗口", "2 个窗口"), "zh-Hant": ("1 個視窗", "2 個視窗")
         ]
         let contextualLabels: [(key: String, source: String, overrides: [String: String])] = [
             ("applications-empty", "Nothing here yet.", ["fr": "Aucune application à afficher."]),
@@ -121,7 +124,7 @@ struct LanguageTests {
                 "emoji-skin-tone-medium", "Medium",
                 [
                     "es": "Medio", "ja": "中間", "ko": "중간 피부색", "pt": "Médio", "ru": "Средний",
-                    "zh-Hans": "中等"
+                    "zh-Hans": "中等", "zh-Hant": "中等"
                 ]
             ),
             (
